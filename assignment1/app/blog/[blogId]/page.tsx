@@ -7,17 +7,17 @@ import { BlogPost } from '../interfaces';
 
 const BlogDetailPage: React.FC = () => {
   const pathname = usePathname();
-  const blogId = Number(pathname.split('/')[2]);
-
+  const blogId = pathname.split('/')[2];
+  
   const [blogPost, setBlogPost] = useState<BlogPost | null>(null);
 
   useEffect(() => {
     const fetchBlogPost = async () => {
       try {
-        const response = await fetch(`https://dummyapi.online/api/blogposts/${blogId}`);
+        const response = await fetch(`/api/blog/${blogId}`);
         if (response.ok) {
           const data = await response.json();
-          setBlogPost(data);
+          setBlogPost(data.blog);
         } else {
           throw new Error('Failed to fetch blog post');
         }
