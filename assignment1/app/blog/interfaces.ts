@@ -1,4 +1,4 @@
-export interface BlogPost {
+export interface BlogPostType {
   _id: string;
   title: string;
   author: string;

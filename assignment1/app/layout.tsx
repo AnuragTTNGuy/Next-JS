@@ -3,7 +3,11 @@
 import "./globals.css";
 import Navigation from "./components/navigation";
 import { useRouter } from 'next/navigation';
-import Footer from "./components/Footer";
+import dynamic from 'next/dynamic'
+ 
+const DynamicFooter = dynamic(() => import('./components/Footer'), {
+  loading: () => <p>Loading...</p>,
+})
 
 export default function RootLayout({
   children,
@@ -34,7 +38,7 @@ export default function RootLayout({
             </h1>
             <Navigation />
             <div className="my-0 py-16">{children}</div>
-            <Footer />
+            <DynamicFooter />
           </div>
         </div>
       </body>

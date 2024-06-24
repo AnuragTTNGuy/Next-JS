@@ -2,10 +2,10 @@
 "use client"
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { BlogPost } from '../blog/interfaces';
+import { BlogPostType } from '../blog/interfaces';
 
 interface BlogFormProps {
-  post?: BlogPost;
+  post?: BlogPostType;
 }
 
 const BlogForm: React.FC<BlogFormProps> = ({ post }) => {

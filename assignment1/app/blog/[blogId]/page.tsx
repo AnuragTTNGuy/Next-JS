@@ -3,13 +3,13 @@
 
 import React, { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
-import { BlogPost } from '../interfaces';
+import { BlogPostType } from '../interfaces';
 
 const BlogDetailPage: React.FC = () => {
   const pathname = usePathname();
   const blogId = pathname.split('/')[2];
   
-  const [blogPost, setBlogPost] = useState<BlogPost | null>(null);
+  const [blogPost, setBlogPost] = useState<BlogPostType | null>(null);
 
   useEffect(() => {
     const fetchBlogPost = async () => {

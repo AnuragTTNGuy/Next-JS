@@ -9,8 +9,6 @@ export async function PUT(request: NextRequest, { params }: { params: { id: stri
   try {
     
     const { author, title, date_published, content } = await request.json();
-
-    console.log('Data new', author, id);
     
     await connectMongoDB();
 

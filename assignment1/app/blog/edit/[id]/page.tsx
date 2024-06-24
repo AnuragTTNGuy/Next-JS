@@ -3,13 +3,13 @@
 import { usePathname } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import BlogForm from '@/app/components/BlogForm';
-import { BlogPost } from '../../interfaces';
+import { BlogPostType } from '../../interfaces';
 
 const EditBlogPost: React.FC = () => {
   const pathname = usePathname();
   const blogId = pathname.split('/')[3];
 
-  const [post, setPost] = useState<BlogPost | null>(null);
+  const [post, setPost] = useState<BlogPostType | null>(null);
 
   useEffect(() => {
     if (blogId) {
