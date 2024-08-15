@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Login from "./components/Login";
 
 export default function Home() {
   const homeURL = "/homeBG.jpg";
@@ -10,6 +11,7 @@ export default function Home() {
     <main className="flex flex-col items-center justify-between p-10">
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
         <p>This is your home.</p>
+        <Login />
       </div>
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
         <Image

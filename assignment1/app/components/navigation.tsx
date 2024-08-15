@@ -1,10 +1,18 @@
-// components/Navigation.tsx
 
-import React from 'react';
 import Link from 'next/link';
 import navigationRoutes from '../data/navigationRoutes';
 
 const Navigation: React.FC = () => {
+  // const isUserLoggedIn = false;
+  // const [providers, setProviders] = useState<Provider[] | null>(null);
+
+  // useEffect(() => {
+  //   const setProviders = async () => {
+  //     const response = await getProviders();
+  //     setProviders(response);
+  //   }
+  //   setProviders();
+  // }, []);
   return (
     <nav className="flex justify-center">
       <ul className="flex space-x-4">
@@ -16,6 +24,28 @@ const Navigation: React.FC = () => {
           </li>
         ))}
       </ul>
+      <div>
+        {/* {!isUserLoggedIn ? (
+          <div className='flex gap-3'>
+            {providers &&
+              Object.values(providers).map((provider) => 
+                (
+                  <button key={provider.name} onClick={() => signIn(provider.id)}>Sign In</button>
+                )
+              )
+            }
+          </div>
+        ) : (
+          <div>
+            <button type="button" onClick={() => signOut}>
+              Sign Out
+            </button>
+            <Link href="/profile">
+              {/* <Image src="./assets/" alt="Profile" width={35} /> 
+            </Link>
+          </div>
+        )} */}
+      </div>
     </nav>
   );
 };

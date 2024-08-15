@@ -3,11 +3,17 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import BlogPost from "../components/BlogPost";
 import { BlogPostType } from "./interfaces";
+import { useSession } from "next-auth/react";
+import { redirect } from "next/navigation";
 
 export default function Blog() {
   const [blogData, setBlogData] = useState<BlogPostType[]>([]);
+  const { data: session, status } = useSession();
 
   useEffect(() => {
+    if (!session) {
+      redirect("/");
+    }
     const fetchBlogData = async () => {
       try {
         const response = await fetch("/api/blog");
